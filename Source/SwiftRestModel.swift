@@ -33,7 +33,11 @@ class SwiftRestModel
     // MARK: - Rest API helper methods
     
     func fetch(data parameters: Dictionary<String, String> = [String: String](), success: ((response: JSON) -> ())? = nil, error: ((response: Any) -> ())? = nil) {
-        self.request(method: "get", url: self.rootUrl, data: parameters, success: success, error: error)
+        if (self.isNew()) {
+            self.request(method: "get", url: self.rootUrl, data: parameters, success: success, error: error)
+        } else {
+            self.request(method: "get", url: self.rootUrl + "/" + self.data["id"].stringValue, data: parameters, success: success, error: error)
+        }
     }
     
     func save(data parameters: Dictionary<String, String> = [String: String](), success: ((response: JSON) -> ())? = nil, error: ((response: Any) -> ())? = nil) {
