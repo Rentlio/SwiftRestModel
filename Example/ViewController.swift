@@ -2,12 +2,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let post = Post()
+    let posts = Post()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        post.fetch()
+        posts.fetch(success: {
+            response in
+            print(response)
+        })
     }
 
 }
