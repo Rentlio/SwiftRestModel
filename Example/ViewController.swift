@@ -10,12 +10,6 @@ class ViewController: UIViewController {
             response in
             print(response)
         })
-        
-        let post = Post(data: ["id": 1])
-        post.fetch(success: {
-            response in
-            print(response)
-        })
     }
 
 }
