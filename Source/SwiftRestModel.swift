@@ -74,9 +74,13 @@ class SwiftRestModel
                 self.data = json
                 self.parse()
                 if response.result.isSuccess {
-                    success!(response: json)
+                    if success != nil {
+                        success!(response: json)
+                    }
                 } else {
-                    error!(response: json)
+                    if error != nil {
+                        error!(response: json)
+                    }
                 }
         }
     }
