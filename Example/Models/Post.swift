@@ -1,7 +1,7 @@
 class Post: SwiftRestModel {
     
-    init() {
-        super.init(rootUrl: "http://jsonplaceholder.typicode.com/posts")
+    init(data: Dictionary<String, AnyObject> = [:]) {
+        super.init(rootUrl: "http://jsonplaceholder.typicode.com/posts", data: data)
     }
     
 }
