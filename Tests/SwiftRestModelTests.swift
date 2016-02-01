@@ -26,7 +26,7 @@ class SwiftRestModelTests: XCTestCase {
     }
     
     func testFetchNewModel() {
-        let expectation = self.expectationWithDescription("fetch posts")
+        let expectation = self.expectationWithDescription("fetch")
         
         model.fetch(
             success: {
@@ -40,7 +40,7 @@ class SwiftRestModelTests: XCTestCase {
     }
     
     func testFetchExistingModel() {
-        let expectation = self.expectationWithDescription("fetch posts")
+        let expectation = self.expectationWithDescription("fetch")
         
         model.data["id"] = "1"
         model.fetch(
@@ -55,16 +55,29 @@ class SwiftRestModelTests: XCTestCase {
     }
     
     func testSave() {
-        let expectation = self.expectationWithDescription("fetch posts")
+        let expectation = self.expectationWithDescription("save")
         
         model.save(
             data   : ["title": "Swift", "body": "REST"],
             success: {
                 response in
-                print(response)
                 XCTAssertNotNil(self.model.data["id"], "response id empty")
                 XCTAssertEqual(self.model.data["title"], "Swift", "response data empty")
                 XCTAssertEqual(self.model.data["body"], "REST", "response data empty")
+                expectation.fulfill()
+        })
+        
+        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+    }
+    
+    func testDestroy() {
+        let expectation = self.expectationWithDescription("destroy")
+        
+        model.data["id"] = "1"
+        model.destroy(
+            success: {
+                response in
+                XCTAssertTrue(self.model.isNew(), "model should be new")
                 expectation.fulfill()
         })
         

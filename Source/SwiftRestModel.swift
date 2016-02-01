@@ -49,9 +49,9 @@ class SwiftRestModel
         
     }
     
-    func destroy(data parameters: Dictionary<String, String> = [String: String](), success: ((response: JSON) -> ())? = nil, error: ((response: Any) -> ())? = nil) {
+    func destroy(success success: ((response: JSON) -> ())? = nil, error: ((response: Any) -> ())? = nil) {
         if (!self.isNew()) {
-            self.request(method: "delete", url: self.rootUrl + "/" + self.data["id"].stringValue, data: parameters, success: success, error: error)
+            self.request(method: "delete", url: self.rootUrl + "/" + self.data["id"].stringValue, success: success, error: error)
         }
     }
     
