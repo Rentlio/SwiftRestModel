@@ -5,7 +5,7 @@ import SwiftyJSON
 
 class SwiftRestModelTests: XCTestCase {
     
-    let model = SwiftRestModel()
+    let model = SwiftRestModel(rootUrl: "http://jsonplaceholder.typicode.com/posts")
     
     override func setUp() {
         super.setUp()
@@ -28,7 +28,6 @@ class SwiftRestModelTests: XCTestCase {
     func testFetchNewModel() {
         let expectation = self.expectationWithDescription("fetch posts")
         
-        model.rootUrl = "http://jsonplaceholder.typicode.com/posts"
         model.fetch(
             success: {
                 response in
@@ -43,7 +42,6 @@ class SwiftRestModelTests: XCTestCase {
     func testFetchExistingModel() {
         let expectation = self.expectationWithDescription("fetch posts")
         
-        model.rootUrl = "http://jsonplaceholder.typicode.com/posts"
         model.data["id"] = "1"
         model.fetch(
             success: {
