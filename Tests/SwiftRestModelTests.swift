@@ -54,6 +54,23 @@ class SwiftRestModelTests: XCTestCase {
         self.waitForExpectationsWithTimeout(5.0, handler: nil)
     }
     
+    func testSave() {
+        let expectation = self.expectationWithDescription("fetch posts")
+        
+        model.save(
+            data   : ["title": "Swift", "body": "REST"],
+            success: {
+                response in
+                print(response)
+                XCTAssertNotNil(self.model.data["id"], "response id empty")
+                XCTAssertEqual(self.model.data["title"], "Swift", "response data empty")
+                XCTAssertEqual(self.model.data["body"], "REST", "response data empty")
+                expectation.fulfill()
+        })
+        
+        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+    }
+    
     func testIsNew() {
         XCTAssertTrue(model.isNew(), "model should be new")
         model.data["id"] = "id1"
