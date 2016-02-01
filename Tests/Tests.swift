@@ -19,10 +19,16 @@ class SwiftRestModelTests: XCTestCase {
         XCTAssertNotNil(model, "model is nil")
     }
     
-    func testParseMethod() {
+    func testParse() {
         let data: JSON = model.data
         model.parse()
         XCTAssertEqual(data.rawString(), model.data.rawString(), "parse method modified data")
+    }
+    
+    func testIsNew() {
+        XCTAssertTrue(model.isNew(), "model should be new")
+        model.data["id"] = "1"
+        XCTAssertFalse(model.isNew(), "model should not be new")
     }
     
 }
