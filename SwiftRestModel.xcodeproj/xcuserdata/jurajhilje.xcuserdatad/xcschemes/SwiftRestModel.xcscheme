@@ -34,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "822F2A941C5A022900FF7A42"
-               BuildableName = "SwiftRestModelTests.xctest"
-               BlueprintName = "SwiftRestModelTests"
+               BuildableName = "Tests.xctest"
+               BlueprintName = "Tests"
                ReferencedContainer = "container:SwiftRestModel.xcodeproj">
             </BuildableReference>
          </TestableReference>
