@@ -25,6 +25,12 @@ class SwiftRestModelTests: XCTestCase {
         XCTAssertEqual(data.rawString(), model.data.rawString(), "parse method modified data")
     }
     
+    func testIsNew() {
+        XCTAssertTrue(model.isNew(), "model should be new")
+        model.data["id"] = "id1"
+        XCTAssertFalse(model.isNew(), "model should not be new")
+    }
+    
     func testFetchNewModel() {
         let expectation = self.expectationWithDescription("fetch")
         
@@ -82,12 +88,6 @@ class SwiftRestModelTests: XCTestCase {
         })
         
         self.waitForExpectationsWithTimeout(5.0, handler: nil)
-    }
-    
-    func testIsNew() {
-        XCTAssertTrue(model.isNew(), "model should be new")
-        model.data["id"] = "id1"
-        XCTAssertFalse(model.isNew(), "model should not be new")
     }
     
 }
