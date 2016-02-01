@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		591C713F408F356AD61731F0 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E02E983E7A2442444C67334 /* Pods.framework */; };
-		820BEE0B1C5F62660080821F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BEE0A1C5F62660080821F /* Tests.swift */; };
 		822F2AAF1C5A111800FF7A42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F2AA71C5A111800FF7A42 /* AppDelegate.swift */; };
 		822F2AB11C5A111800FF7A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 822F2AA81C5A111800FF7A42 /* Assets.xcassets */; };
 		822F2AB31C5A111800FF7A42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822F2AA91C5A111800FF7A42 /* LaunchScreen.storyboard */; };
@@ -16,6 +15,7 @@
 		822F2AB91C5A111800FF7A42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F2AAE1C5A111800FF7A42 /* ViewController.swift */; };
 		822F2ABD1C5A33CF00FF7A42 /* SwiftRestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F2ABC1C5A33CF00FF7A42 /* SwiftRestModel.swift */; };
 		8289F5571C5A37B800DCCE48 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289F5561C5A37B800DCCE48 /* Post.swift */; };
+		829012241C5F6F9300C38A05 /* SwiftRestModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829012231C5F6F9300C38A05 /* SwiftRestModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +31,6 @@
 /* Begin PBXFileReference section */
 		32E959358F556BB4B7154110 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		820BEE081C5F62660080821F /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		820BEE0A1C5F62660080821F /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		820BEE0C1C5F62660080821F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		822F2A811C5A022900FF7A42 /* SwiftRestModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRestModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		822F2AA71C5A111800FF7A42 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		822F2AAE1C5A111800FF7A42 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		822F2ABC1C5A33CF00FF7A42 /* SwiftRestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRestModel.swift; sourceTree = "<group>"; };
 		8289F5561C5A37B800DCCE48 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		829012231C5F6F9300C38A05 /* SwiftRestModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRestModelTests.swift; sourceTree = "<group>"; };
 		8E02E983E7A2442444C67334 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8B7D8710FDEDBF5789320F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,7 +76,7 @@
 		820BEE091C5F62660080821F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				820BEE0A1C5F62660080821F /* Tests.swift */,
+				829012231C5F6F9300C38A05 /* SwiftRestModelTests.swift */,
 				820BEE0C1C5F62660080821F /* Info.plist */,
 			);
 			path = Tests;
@@ -294,7 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				820BEE0B1C5F62660080821F /* Tests.swift in Sources */,
+				829012241C5F6F9300C38A05 /* SwiftRestModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +480,7 @@
 				820BEE111C5F62660080821F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		822F2A7C1C5A022900FF7A42 /* Build configuration list for PBXProject "SwiftRestModel" */ = {
 			isa = XCConfigurationList;
