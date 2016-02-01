@@ -60,9 +60,26 @@ class SwiftRestModelTests: XCTestCase {
         self.waitForExpectationsWithTimeout(5.0, handler: nil)
     }
     
-    func testSave() {
+    func testSaveNewModel() {
         let expectation = self.expectationWithDescription("save")
         
+        model.save(
+            data   : ["title": "Swift", "body": "REST"],
+            success: {
+                response in
+                XCTAssertNotNil(self.model.data["id"], "response id empty")
+                XCTAssertEqual(self.model.data["title"], "Swift", "response data empty")
+                XCTAssertEqual(self.model.data["body"], "REST", "response data empty")
+                expectation.fulfill()
+        })
+        
+        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+    }
+    
+    func testSaveExistingModel() {
+        let expectation = self.expectationWithDescription("save")
+        
+        model.data["id"] = "1"
         model.save(
             data   : ["title": "Swift", "body": "REST"],
             success: {
@@ -84,6 +101,21 @@ class SwiftRestModelTests: XCTestCase {
             success: {
                 response in
                 XCTAssertTrue(self.model.isNew(), "model should be new")
+                expectation.fulfill()
+        })
+        
+        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+    }
+    
+    func testErrorHandler() {
+        let expectation = self.expectationWithDescription("error-handler")
+        
+        model.rootUrl = "http://fake-domain"
+        model.fetch(
+            error: {
+                response in
+                XCTAssertNotNil(response, "response is empty")
+                XCTAssertNotNil(response["error"], "response error is empty")
                 expectation.fulfill()
         })
         
