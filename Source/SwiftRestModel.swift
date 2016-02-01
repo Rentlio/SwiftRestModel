@@ -25,9 +25,9 @@ class SwiftRestModel
     func isNew() -> Bool {
         if (self.data["id"].isExists()) {
             return false
-        } else {
-            return true
         }
+        
+        return true
     }
     
     // MARK: - Rest API helper methods
