@@ -1,6 +1,12 @@
 SwiftRestModel
 ==============
-SwiftRestModel is a small helper class for communicating with RESTful APIs using [Alamofire](https://github.com/Alamofire/Alamofire) and [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON).
+SwiftRestModel is a small helper class for communicating with RESTful APIs using Alamofire and SwiftyJSON.
+
+## Dependencies
+
+- [Alamofire](https://github.com/Alamofire/Alamofire)
+- [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
+- [HTTPStatusCodes](https://github.com/rhodgkins/SwiftHTTPStatusCodes)
 
 ## Example Project
 You'll need to install [Cocoapods](http://cocoapods.org) first.
