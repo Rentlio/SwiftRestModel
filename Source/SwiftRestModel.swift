@@ -32,7 +32,7 @@ class SwiftRestModel
     
     // MARK: - Rest API helper methods
     
-    func fetch(data parameters: Dictionary<String, String> = [String: String](), success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
+    func fetch(data parameters: Dictionary<String, AnyObject> = [:], success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
         if (self.isNew()) {
             self.request(method: "get", url: self.rootUrl, data: parameters, success: success, error: error)
         } else {
@@ -40,7 +40,7 @@ class SwiftRestModel
         }
     }
     
-    func save(data parameters: Dictionary<String, String> = [String: String](), success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
+    func save(data parameters: Dictionary<String, AnyObject> = [:], success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
         if (self.isNew()) {
             self.request(method: "post", url: self.rootUrl, data: parameters, encoding: .JSON, success: success, error: error)
         } else {
@@ -57,7 +57,7 @@ class SwiftRestModel
     
     // MARK: - Rest API request method
     
-    func request(method method:String, url: String, data parameters: Dictionary<String, String> = [String: String](), encoding: ParameterEncoding = ParameterEncoding.URL, success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
+    func request(method method:String, url: String, data parameters: Dictionary<String, AnyObject> = [:], encoding: ParameterEncoding = ParameterEncoding.URL, success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
         
         var requestMethod: Alamofire.Method
         
