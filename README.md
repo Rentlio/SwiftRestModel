@@ -168,3 +168,24 @@ posts.fetchFirst(
 )
 // GET "/posts/first?foo=bar"
 ```
+
+## Branches
+
+- master - The production branch. Clone or fork this repository for the latest copy.
+- develop - The active development branch. Pull requests should be directed to this branch.
+
+## Contribution
+
+Ready to submit a fix or a feature? Submit a pull request! And _please_:
+
+- If code changes, run the tests and make sure everything still works.
+- Write new tests for new functionality.
+- Update documentation comments where applicable.
+- Maintain the existing style.
+
+## Contact
+
+- [Juraj Hilje](https://github.com/jurajhilje), [@juraj_hilje](https://twitter.com/juraj_hilje)
+
+## License
+See [LICENSE](https://github.com/Rentlio/SwiftRestModel/blob/master/LICENSE).
