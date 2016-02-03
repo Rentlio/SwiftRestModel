@@ -57,7 +57,7 @@ class SwiftRestModel
     
     // MARK: - Rest API request method
     
-    func request(method method:String, url: String, data parameters: Dictionary<String, AnyObject> = [:], encoding: ParameterEncoding = ParameterEncoding.URL, success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
+    func request(method method:String, url: String, data parameters: Dictionary<String, AnyObject> = [:], headers: Dictionary<String, String> = [:], encoding: ParameterEncoding = ParameterEncoding.URL, success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
         
         var requestMethod: Alamofire.Method
         
@@ -72,7 +72,7 @@ class SwiftRestModel
             requestMethod = .GET
         }
         
-        Alamofire.request(requestMethod, url, parameters: parameters, encoding: encoding)
+        Alamofire.request(requestMethod, url, parameters: parameters, headers: headers, encoding: encoding)
             .responseJSON { response in
                 if response.result.isSuccess {
                     let json = JSON(data: response.data!)

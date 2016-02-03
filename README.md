@@ -102,6 +102,7 @@ model.request(
     method  : "get",
     url     : "http://jsonplaceholder.typicode.com/posts",
     data    : ["foo": "bar"],
+    headers : ["Authorization": "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=="],
     encoding: ParameterEncoding.URL,
     success : {
         response in
@@ -119,6 +120,7 @@ Default parameters:
 - method: "get"
 - url: ""
 - data: [:]
+- headers: [:]
 - encoding: ParameterEncoding.URL
 - success: nil
 - error: nil
