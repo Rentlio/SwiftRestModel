@@ -34,6 +34,7 @@ model.fetch()
 model.fetch(success: {
     response in
     print(response)
+    // or print(model.data)
 })
 ```
 
@@ -124,3 +125,46 @@ Default parameters:
 - encoding: ParameterEncoding.URL
 - success: nil
 - error: nil
+
+## Models
+Subclass SwiftRestModel to organize your API models
+
+```swift
+class Posts: SwiftRestModel {
+    
+    let url = "http://jsonplaceholder.typicode.com/posts"
+    
+    init() {
+        super.init(rootUrl: self.url)
+    }
+    
+    // Custom Endpoint
+    func fetchFirst(data data: Dictionary<String, AnyObject> = [:], success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
+        self.request(method: "get", url: self.rootUrl + "/first", data: data, success: success, error: error)
+    }
+    
+}
+```
+
+```swift
+let posts = Posts()
+
+posts.fetch()
+// GET "/posts"
+
+posts.fetchFirst()
+// GET "/posts/first"
+
+posts.fetchFirst(
+    data   : ["foo": "bar"],
+    success: {
+        response in
+        print(response)
+    },
+    error  : {
+        response in
+        print(response)
+    }
+)
+// GET "/posts/first?foo=bar"
+```
