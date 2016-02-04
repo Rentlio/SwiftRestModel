@@ -40,11 +40,11 @@ class SwiftRestModel
         }
     }
     
-    func save(data parameters: Dictionary<String, AnyObject> = [:], success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
+    func save(data parameters: Dictionary<String, AnyObject> = [:], encoding: ParameterEncoding = ParameterEncoding.JSON, success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
         if (self.isNew()) {
-            self.request(method: "post", url: self.rootUrl, data: parameters, encoding: .JSON, success: success, error: error)
+            self.request(method: "post", url: self.rootUrl, data: parameters, encoding: encoding, success: success, error: error)
         } else {
-            self.request(method: "put", url: self.rootUrl + "/" + self.data["id"].stringValue, data: parameters, encoding: .JSON, success: success, error: error)
+            self.request(method: "put", url: self.rootUrl + "/" + self.data["id"].stringValue, data: parameters, encoding: encoding, success: success, error: error)
         }
         
     }

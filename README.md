@@ -60,6 +60,7 @@ model.save(data: ["foo": "bar"])
 
 Default parameters:
 - data: [:]
+- [encoding](https://github.com/Alamofire/Alamofire#parameter-encoding): ParameterEncoding.JSON
 - success: nil
 - error: nil
 
@@ -84,6 +85,7 @@ model.save(data: ["foo": "bar"])
 
 Default parameters:
 - data: [:]
+- [encoding](https://github.com/Alamofire/Alamofire#parameter-encoding): ParameterEncoding.JSON
 - success: nil
 - error: nil
 
@@ -122,7 +124,7 @@ Default parameters:
 - url: ""
 - data: [:]
 - headers: [:]
-- encoding: ParameterEncoding.URL
+- [encoding](https://github.com/Alamofire/Alamofire#parameter-encoding): ParameterEncoding.URL
 - success: nil
 - error: nil
 
