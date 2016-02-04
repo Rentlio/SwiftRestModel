@@ -14,6 +14,13 @@
 		822F2AB51C5A111800FF7A42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822F2AAB1C5A111800FF7A42 /* Main.storyboard */; };
 		822F2AB91C5A111800FF7A42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F2AAE1C5A111800FF7A42 /* ViewController.swift */; };
 		822F2ABD1C5A33CF00FF7A42 /* SwiftRestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F2ABC1C5A33CF00FF7A42 /* SwiftRestModel.swift */; };
+		8255A4061C635FF200FE4867 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8255A4051C635FF200FE4867 /* Alamofire.framework */; };
+		8255A4081C635FF700FE4867 /* HTTPStatusCodes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8255A4071C635FF700FE4867 /* HTTPStatusCodes.framework */; };
+		8255A40A1C635FFB00FE4867 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8255A4091C635FFB00FE4867 /* SwiftyJSON.framework */; };
+		8255A40C1C63636200FE4867 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8255A40B1C63636200FE4867 /* Pods.framework */; };
+		8255A40E1C63636500FE4867 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8255A40D1C63636500FE4867 /* Alamofire.framework */; };
+		8255A4101C63636900FE4867 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8255A40F1C63636900FE4867 /* SwiftyJSON.framework */; };
+		8255A4121C63636D00FE4867 /* HTTPStatusCodes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8255A4111C63636D00FE4867 /* HTTPStatusCodes.framework */; };
 		8289F5571C5A37B800DCCE48 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289F5561C5A37B800DCCE48 /* Post.swift */; };
 		829012241C5F6F9300C38A05 /* SwiftRestModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829012231C5F6F9300C38A05 /* SwiftRestModelTests.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +47,13 @@
 		822F2AAD1C5A111800FF7A42 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		822F2AAE1C5A111800FF7A42 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		822F2ABC1C5A33CF00FF7A42 /* SwiftRestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRestModel.swift; sourceTree = "<group>"; };
+		8255A4051C635FF200FE4867 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		8255A4071C635FF700FE4867 /* HTTPStatusCodes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPStatusCodes.framework; path = "Pods/../build/Debug-iphoneos/HTTPStatusCodes.framework"; sourceTree = "<group>"; };
+		8255A4091C635FFB00FE4867 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		8255A40B1C63636200FE4867 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
+		8255A40D1C63636500FE4867 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		8255A40F1C63636900FE4867 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		8255A4111C63636D00FE4867 /* HTTPStatusCodes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPStatusCodes.framework; path = "Pods/../build/Debug-iphoneos/HTTPStatusCodes.framework"; sourceTree = "<group>"; };
 		8289F5561C5A37B800DCCE48 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		829012231C5F6F9300C38A05 /* SwiftRestModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRestModelTests.swift; sourceTree = "<group>"; };
 		8E02E983E7A2442444C67334 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +65,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8255A4121C63636D00FE4867 /* HTTPStatusCodes.framework in Frameworks */,
+				8255A4101C63636900FE4867 /* SwiftyJSON.framework in Frameworks */,
+				8255A40E1C63636500FE4867 /* Alamofire.framework in Frameworks */,
+				8255A40C1C63636200FE4867 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +77,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				591C713F408F356AD61731F0 /* Pods.framework in Frameworks */,
+				8255A4061C635FF200FE4867 /* Alamofire.framework in Frameworks */,
+				8255A40A1C635FFB00FE4867 /* SwiftyJSON.framework in Frameworks */,
+				8255A4081C635FF700FE4867 /* HTTPStatusCodes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +89,13 @@
 		79BD9747B10854FF2AF4639E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8255A4111C63636D00FE4867 /* HTTPStatusCodes.framework */,
+				8255A40F1C63636900FE4867 /* SwiftyJSON.framework */,
+				8255A40D1C63636500FE4867 /* Alamofire.framework */,
+				8255A40B1C63636200FE4867 /* Pods.framework */,
+				8255A4091C635FFB00FE4867 /* SwiftyJSON.framework */,
+				8255A4071C635FF700FE4867 /* HTTPStatusCodes.framework */,
+				8255A4051C635FF200FE4867 /* Alamofire.framework */,
 				8E02E983E7A2442444C67334 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -343,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jurajhilje.Tests;
@@ -355,6 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jurajhilje.Tests;
@@ -451,6 +481,7 @@
 			baseConfigurationReference = EC8B7D8710FDEDBF5789320F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jurajhilje.SwiftRestModel;
@@ -463,6 +494,7 @@
 			baseConfigurationReference = 32E959358F556BB4B7154110 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jurajhilje.SwiftRestModel;
