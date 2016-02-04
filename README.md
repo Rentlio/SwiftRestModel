@@ -109,7 +109,7 @@ model.request(
     url     : "http://jsonplaceholder.typicode.com/posts",
     data    : ["foo": "bar"],
     headers : ["Authorization": "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=="],
-    encoding: ParameterEncoding.URL,
+    encoding: .URL,
     success : {
         response in
         print(response)
