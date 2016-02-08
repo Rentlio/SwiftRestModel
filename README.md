@@ -22,6 +22,15 @@ use_frameworks!
 pod 'SwiftRestModel'
 ```
 
+App Transport Security is blocking a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.
+```xml
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+```
+
 ## Example Project
 You'll need to install [Cocoapods](http://cocoapods.org) first.
 
@@ -31,15 +40,6 @@ $ git clone git@github.com:Rentlio/SwiftRestModel.git
 $ cd SwiftRestModel
 $ pod install
 $ open SwiftRestModel.xcworkspace
-```
-
-App Transport Security is blocking a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.
-```xml
-<key>NSAppTransportSecurity</key>
-<dict>
-    <key>NSAllowsArbitraryLoads</key>
-    <true/>
-</dict>
 ```
 
 ## Basic Usage
