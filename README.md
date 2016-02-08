@@ -11,15 +11,34 @@ SwiftRestModel is a small helper class for communicating with RESTful APIs using
 - [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
 - [HTTPStatusCodes](https://github.com/rhodgkins/SwiftHTTPStatusCodes)
 
+## Integration
+
+You can use [Cocoapods](http://cocoapods.org) to install `SwiftRestModel` by adding it to your `Podfile`:
+```ruby
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'SwiftRestModel'
+```
+
 ## Example Project
 You'll need to install [Cocoapods](http://cocoapods.org) first.
 
 Grab the source code, and then install dependencies.
-```
+```bash
 $ git clone git@github.com:Rentlio/SwiftRestModel.git
 $ cd SwiftRestModel
 $ pod install
 $ open SwiftRestModel.xcworkspace
+```
+
+App Transport Security is blocking a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.
+```xml
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
 ```
 
 ## Basic Usage
