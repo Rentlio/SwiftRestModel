@@ -2,7 +2,7 @@ import Alamofire
 import SwiftyJSON
 import HTTPStatusCodes
 
-class SwiftRestModel
+public class SwiftRestModel
 {
     // MARK: - Properties
     
@@ -20,7 +20,7 @@ class SwiftRestModel
     - parameter rootUrl: URL string. `""` by default.
     - parameter data   : Model attributes Dictionary. `[:]` by default.
     */
-    init(rootUrl: String = "", data: Dictionary<String, AnyObject> = [:]) {
+    public init(rootUrl: String = "", data: Dictionary<String, AnyObject> = [:]) {
         self.rootUrl = rootUrl
         self.data = JSON(data)
     }
@@ -31,7 +31,7 @@ class SwiftRestModel
     Parse method is called after HTTP request is successful.
     It can be used in model subclass to manupulate self.data object.
     */
-    func parse() {
+    public func parse() {
         
     }
     
@@ -40,7 +40,7 @@ class SwiftRestModel
      
     - returns: Bool
     */
-    func isNew() -> Bool {
+    public func isNew() -> Bool {
         if (self.data["id"].isExists()) {
             return false
         }
@@ -57,7 +57,7 @@ class SwiftRestModel
     - parameter success: Success handler callback. `nil` by default.
     - parameter error  : Error handler callback. `nil` by default.
     */
-    func fetch(data parameters: Dictionary<String, AnyObject> = [:], success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
+    public func fetch(data parameters: Dictionary<String, AnyObject> = [:], success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
         if (self.isNew()) {
             self.request(method: "get", url: self.rootUrl, data: parameters, success: success, error: error)
         } else {
@@ -75,7 +75,7 @@ class SwiftRestModel
     - parameter success : Success handler callback. `nil` by default.
     - parameter error   : Error handler callback. `nil` by default.
     */
-    func save(data parameters: Dictionary<String, AnyObject> = [:], encoding: ParameterEncoding = .JSON, success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
+    public func save(data parameters: Dictionary<String, AnyObject> = [:], encoding: ParameterEncoding = .JSON, success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
         if (self.isNew()) {
             self.request(method: "post", url: self.rootUrl, data: parameters, encoding: encoding, success: success, error: error)
         } else {
@@ -90,7 +90,7 @@ class SwiftRestModel
     - parameter success: Success handler callback. `nil` by default.
     - parameter error  : Error handler callback. `nil` by default.
     */
-    func destroy(success success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
+    public func destroy(success success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
         if (!self.isNew()) {
             self.request(method: "delete", url: self.rootUrl + "/" + self.data["id"].stringValue, success: success, error: error)
         }
@@ -107,7 +107,7 @@ class SwiftRestModel
     - parameter success : Success handler callback. `nil` by default.
     - parameter error   : Error handler callback. `nil` by default.
     */
-    func request(method method:String = "get", url: String = "", data parameters: Dictionary<String, AnyObject> = [:], headers: Dictionary<String, String> = [:], encoding: ParameterEncoding = .URL, success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
+    public func request(method method:String = "get", url: String = "", data parameters: Dictionary<String, AnyObject> = [:], headers: Dictionary<String, String> = [:], encoding: ParameterEncoding = .URL, success: ((response: JSON) -> ())? = nil, error: ((response: JSON) -> ())? = nil) {
         
         var requestMethod: Alamofire.Method
         
