@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
   s.ios.deployment_target = "8.0"
-  s.source = { :git => "https://github.com/Rentlio/SwiftRestModel.git", :tag => "v1.0.0" }
+  s.source = { :git => "https://github.com/Rentlio/SwiftRestModel.git", :tag => s.version }
   s.source_files = "Source/*.swift"
   s.dependency 'Alamofire', '~> 3.0'
   s.dependency 'SwiftyJSON', '~> 2.3.2'
