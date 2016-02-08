@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name = "SwiftRestModel"
   s.version = "1.0.0"
   s.summary = "Swift helper for REST models"
-  s.homepage = "https://github.com/SwiftyJSON/SwiftyJSON"
+  s.homepage = "https://github.com/Rentlio/SwiftRestModel"
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.authors = { "Juraj Hilje" => "juraj.hilje@gmail.com" }
 
