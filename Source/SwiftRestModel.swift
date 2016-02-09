@@ -7,10 +7,10 @@ public class SwiftRestModel
     // MARK: - Properties
     
     // URL string
-    var rootUrl: String
+    public var rootUrl: String
     
     // Model attributes Dictionary
-    var data: JSON
+    public var data: JSON
     
     // MARK: - Init
     
