@@ -2,6 +2,8 @@ SwiftRestModel
 ==============
 
 [![Build Status](https://travis-ci.org/Rentlio/SwiftRestModel.svg?branch=master)](https://travis-ci.org/Rentlio/SwiftRestModel)
+[![Language](http://img.shields.io/badge/language-swift-orange.svg?style=flat
+             )](https://developer.apple.com/swift)
 
 SwiftRestModel is a small helper class for communicating with RESTful APIs using Alamofire and SwiftyJSON.
 
