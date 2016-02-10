@@ -15,7 +15,7 @@ SwiftRestModel is a small helper class for communicating with RESTful APIs using
 
 ## Integration
 
-You can use [Cocoapods](http://cocoapods.org) to install `SwiftRestModel` by adding it to your `Podfile`:
+You can use [CocoaPods](http://cocoapods.org) to install `SwiftRestModel` by adding it to your `Podfile`:
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
@@ -34,7 +34,7 @@ App Transport Security is blocking a cleartext HTTP (http://) resource load sinc
 ```
 
 ## Example Project
-You'll need to install [Cocoapods](http://cocoapods.org) first.
+You'll need to install [CocoaPods](http://cocoapods.org) first.
 
 Grab the source code, and then install dependencies.
 ```bash
