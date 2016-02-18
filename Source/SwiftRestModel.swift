@@ -2,7 +2,7 @@ import Alamofire
 import SwiftyJSON
 import HTTPStatusCodes
 
-public class SwiftRestModel
+public class SwiftRestModel: NSObject
 {
     // MARK: - Properties
     
