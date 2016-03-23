@@ -106,7 +106,7 @@ class SwiftRestModelTests: XCTestCase {
         
         self.waitForExpectationsWithTimeout(5.0, handler: nil)
     }
-    
+
     func testErrorHandler() {
         let expectation = self.expectationWithDescription("error-handler")
         
@@ -114,12 +114,28 @@ class SwiftRestModelTests: XCTestCase {
         model.fetch(
             error: {
                 response in
-                XCTAssertNotNil(response, "response is empty")
-                XCTAssertNotNil(response["error"], "response error is empty")
+                XCTAssertNotNil(response, "response is not empty")
+                XCTAssertNotNil(response["error"], "response error is not empty")
                 expectation.fulfill()
         })
         
         self.waitForExpectationsWithTimeout(5.0, handler: nil)
     }
-    
+
+    func testErrorWithResponse() {
+        let expectation = self.expectationWithDescription("error-response-handler")
+        model.rootUrl = "http://jsonplaceholder.typicode.com/fakemodel"
+
+        model.fetch(
+            error: {
+                response in
+                XCTAssertNotNil(response, "response is not empty")
+                XCTAssertNotNil(response["error"], "response is not empty")
+                XCTAssertEqual(response["status"], 404, "status code is 404")
+                expectation.fulfill()
+        })
+
+        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+    }
+
 }
