@@ -123,16 +123,22 @@ public class SwiftRestModel: NSObject
         }
         
         Alamofire.request(requestMethod, url, parameters: parameters, headers: headers, encoding: encoding)
+            .validate()
             .responseJSON { response in
-                if response.result.isSuccess {
+                switch response.result {
+                case .Success:
                     let json = JSON(data: response.data!)
                     self.data = json
                     self.parse()
                     if success != nil {
                         success!(response: json)
                     }
-                } else {
-                    let json: JSON = ["error": (response.result.error?.userInfo["NSLocalizedDescription"])!]
+                case .Failure(let responseError):
+                    var json = JSON(["error": responseError.localizedDescription])
+                    if let responseStatus = response.response?.statusCode {
+                        json["status"] = JSON(responseStatus)
+                    }
+
                     if error != nil {
                         error!(response: json)
                     }
