@@ -139,7 +139,9 @@ public class SwiftRestModel: NSObject
                         json["status"] = JSON(responseStatus)
                     }
 
-                    error!(response: json)
+                    if error != nil {
+                        error!(response: json)
+                    }
                 }
         }
     }
