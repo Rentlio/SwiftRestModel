@@ -130,8 +130,8 @@ public class SwiftRestModel: NSObject
                     let json = JSON(data: response.data!)
                     self.data = json
                     self.parse()
-                    if success != nil {
-                        success!(response: json)
+                    if let success = success {
+                        success(response: json)
                     }
                 case .Failure(let responseError):
                     var json = JSON(["error": responseError.localizedDescription])
@@ -139,8 +139,8 @@ public class SwiftRestModel: NSObject
                         json["status"] = JSON(responseStatus)
                     }
 
-                    if error != nil {
-                        error!(response: json)
+                    if let error = error {
+                        error(response: json)
                     }
                 }
         }
