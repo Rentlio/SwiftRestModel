@@ -41,7 +41,7 @@ public class SwiftRestModel: NSObject
     - returns: Bool
     */
     public func isNew() -> Bool {
-        if (self.data["id"].isExists()) {
+        if (self.data["id"].exists()) {
             return false
         }
         
