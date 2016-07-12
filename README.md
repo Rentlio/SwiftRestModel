@@ -2,6 +2,7 @@ SwiftRestModel
 ==============
 
 [![Build Status](https://travis-ci.org/Rentlio/SwiftRestModel.svg?branch=master)](https://travis-ci.org/Rentlio/SwiftRestModel)
+[![codebeat badge](https://codebeat.co/badges/7f93422a-ec2e-4e24-8d57-c23bc8df7831)](https://codebeat.co/projects/github-com-rentlio-swiftrestmodel)
 [![Language](http://img.shields.io/badge/language-swift-orange.svg?style=flat
              )](https://developer.apple.com/swift)
 
