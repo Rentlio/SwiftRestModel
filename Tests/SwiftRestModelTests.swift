@@ -32,7 +32,7 @@ class SwiftRestModelTests: XCTestCase {
     }
     
     func testFetchNewModel() {
-        let expectation = self.expectationWithDescription("fetch")
+        let expectation = self.expectation(description: "fetch")
         
         model.fetch(
             success: {
@@ -42,11 +42,11 @@ class SwiftRestModelTests: XCTestCase {
                 expectation.fulfill()
         })
         
-        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+        self.waitForExpectations(timeout: 5.0, handler: nil)
     }
     
     func testFetchExistingModel() {
-        let expectation = self.expectationWithDescription("fetch")
+        let expectation = self.expectation(description: "fetch")
         
         model.data["id"] = "1"
         model.fetch(
@@ -57,11 +57,11 @@ class SwiftRestModelTests: XCTestCase {
                 expectation.fulfill()
         })
         
-        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+        self.waitForExpectations(timeout: 5.0, handler: nil)
     }
     
     func testSaveNewModel() {
-        let expectation = self.expectationWithDescription("save")
+        let expectation = self.expectation(description: "save")
         
         model.save(
             data   : ["title": "Swift", "body": "REST"],
@@ -73,11 +73,11 @@ class SwiftRestModelTests: XCTestCase {
                 expectation.fulfill()
         })
         
-        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+        self.waitForExpectations(timeout: 5.0, handler: nil)
     }
     
     func testSaveExistingModel() {
-        let expectation = self.expectationWithDescription("save")
+        let expectation = self.expectation(description: "save")
         
         model.data["id"] = "1"
         model.save(
@@ -90,11 +90,11 @@ class SwiftRestModelTests: XCTestCase {
                 expectation.fulfill()
         })
         
-        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+        self.waitForExpectations(timeout: 5.0, handler: nil)
     }
     
     func testDestroy() {
-        let expectation = self.expectationWithDescription("destroy")
+        let expectation = self.expectation(description: "destroy")
         
         model.data["id"] = "1"
         model.destroy(
@@ -104,22 +104,38 @@ class SwiftRestModelTests: XCTestCase {
                 expectation.fulfill()
         })
         
-        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+        self.waitForExpectations(timeout: 5.0, handler: nil)
     }
-    
+
     func testErrorHandler() {
-        let expectation = self.expectationWithDescription("error-handler")
+        let expectation = self.expectation(description: "error-handler")
         
         model.rootUrl = "http://fake-domain"
         model.fetch(
             error: {
                 response in
-                XCTAssertNotNil(response, "response is empty")
-                XCTAssertNotNil(response["error"], "response error is empty")
+                XCTAssertNotNil(response, "response is not empty")
+                XCTAssertNotNil(response["error"], "response error is not empty")
                 expectation.fulfill()
         })
         
-        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+        self.waitForExpectations(timeout: 5.0, handler: nil)
     }
-    
+
+    func testErrorWithResponse() {
+        let expectation = self.expectation(description: "error-response-handler")
+        model.rootUrl = "http://jsonplaceholder.typicode.com/fakemodel"
+
+        model.fetch(
+            error: {
+                response in
+                XCTAssertNotNil(response, "response is not empty")
+                XCTAssertNotNil(response["error"], "response is not empty")
+                XCTAssertEqual(response["status"], 404, "status code is 404")
+                expectation.fulfill()
+        })
+
+        self.waitForExpectations(timeout: 5.0, handler: nil)
+    }
+
 }

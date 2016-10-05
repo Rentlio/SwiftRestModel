@@ -2,24 +2,29 @@ SwiftRestModel
 ==============
 
 [![Build Status](https://travis-ci.org/Rentlio/SwiftRestModel.svg?branch=master)](https://travis-ci.org/Rentlio/SwiftRestModel)
+[![codebeat badge](https://codebeat.co/badges/7f93422a-ec2e-4e24-8d57-c23bc8df7831)](https://codebeat.co/projects/github-com-rentlio-swiftrestmodel)
+[![Language](http://img.shields.io/badge/language-swift-orange.svg?style=flat
+             )](https://developer.apple.com/swift)
 
 SwiftRestModel is a small helper class for communicating with RESTful APIs using Alamofire and SwiftyJSON.
 
 ## Dependencies
 
-- [Alamofire](https://github.com/Alamofire/Alamofire)
-- [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
-- [HTTPStatusCodes](https://github.com/rhodgkins/SwiftHTTPStatusCodes)
+- [Alamofire 4.0.1](https://github.com/Alamofire/Alamofire)
+- [SwiftyJSON 3.1.0](https://github.com/SwiftyJSON/SwiftyJSON)
+- [HTTPStatusCodes 3.1.0](https://github.com/rhodgkins/SwiftHTTPStatusCodes)
 
 ## Integration
 
-You can use [Cocoapods](http://cocoapods.org) to install `SwiftRestModel` by adding it to your `Podfile`:
+You can use [CocoaPods](http://cocoapods.org) to install `SwiftRestModel` by adding it to your `Podfile`:
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
-pod 'SwiftRestModel'
+target 'MyApp' do
+    pod 'SwiftRestModel'
+end
 ```
 
 App Transport Security is blocking a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.
@@ -32,7 +37,7 @@ App Transport Security is blocking a cleartext HTTP (http://) resource load sinc
 ```
 
 ## Example Project
-You'll need to install [Cocoapods](http://cocoapods.org) first.
+You'll need to install [CocoaPods](http://cocoapods.org) first.
 
 Grab the source code, and then install dependencies.
 ```bash
@@ -108,7 +113,7 @@ model.save(data: ["foo": "bar"])
 
 Default parameters:
 - data: [:]
-- [encoding](https://github.com/Alamofire/Alamofire#parameter-encoding): .JSON
+- [encoding](https://github.com/Alamofire/Alamofire#parameter-encoding): JSONEncoding.default
 - success: nil
 - error: nil
 
@@ -129,7 +134,7 @@ model.request(
     url     : "http://jsonplaceholder.typicode.com/posts",
     data    : ["foo": "bar"],
     headers : ["Authorization": "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=="],
-    encoding: .URL,
+    encoding: URLEncoding.default,
     success : {
         response in
         print(response)
@@ -147,7 +152,7 @@ Default parameters:
 - url: ""
 - data: [:]
 - headers: [:]
-- [encoding](https://github.com/Alamofire/Alamofire#parameter-encoding): .URL
+- [encoding](https://github.com/Alamofire/Alamofire#parameter-encoding): URLEncoding.default
 - success: nil
 - error: nil
 
