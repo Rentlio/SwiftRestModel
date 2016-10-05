@@ -10,9 +10,9 @@ SwiftRestModel is a small helper class for communicating with RESTful APIs using
 
 ## Dependencies
 
-- [Alamofire](https://github.com/Alamofire/Alamofire)
-- [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
-- [HTTPStatusCodes](https://github.com/rhodgkins/SwiftHTTPStatusCodes)
+- [Alamofire 4.0.1](https://github.com/Alamofire/Alamofire)
+- [SwiftyJSON 3.1.0](https://github.com/SwiftyJSON/SwiftyJSON)
+- [HTTPStatusCodes 3.1.0](https://github.com/rhodgkins/SwiftHTTPStatusCodes)
 
 ## Integration
 
@@ -22,7 +22,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 use_frameworks!
 
-pod 'SwiftRestModel'
+target 'MyApp' do
+    pod 'SwiftRestModel'
+end
 ```
 
 App Transport Security is blocking a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.
@@ -111,7 +113,7 @@ model.save(data: ["foo": "bar"])
 
 Default parameters:
 - data: [:]
-- [encoding](https://github.com/Alamofire/Alamofire#parameter-encoding): .JSON
+- [encoding](https://github.com/Alamofire/Alamofire#parameter-encoding): JSONEncoding.default
 - success: nil
 - error: nil
 
@@ -132,7 +134,7 @@ model.request(
     url     : "http://jsonplaceholder.typicode.com/posts",
     data    : ["foo": "bar"],
     headers : ["Authorization": "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=="],
-    encoding: .URL,
+    encoding: URLEncoding.default,
     success : {
         response in
         print(response)
@@ -150,7 +152,7 @@ Default parameters:
 - url: ""
 - data: [:]
 - headers: [:]
-- [encoding](https://github.com/Alamofire/Alamofire#parameter-encoding): .URL
+- [encoding](https://github.com/Alamofire/Alamofire#parameter-encoding): URLEncoding.default
 - success: nil
 - error: nil
 
