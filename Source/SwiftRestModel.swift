@@ -57,7 +57,7 @@ open class SwiftRestModel: NSObject
     - parameter success: Success handler callback. `nil` by default.
     - parameter error  : Error handler callback. `nil` by default.
     */
-    open func fetch(data parameters: Dictionary<String, AnyObject> = [:], success: ((_ response: JSON) -> ())? = nil, error: ((_ response: JSON) -> ())? = nil) {
+    open func fetch(data parameters: Dictionary<String, String> = [:], success: ((_ response: JSON) -> ())? = nil, error: ((_ response: JSON) -> ())? = nil) {
         if (self.isNew()) {
             self.request(method: "get", url: self.rootUrl, data: parameters, success: success, error: error)
         } else {
@@ -75,7 +75,7 @@ open class SwiftRestModel: NSObject
     - parameter success : Success handler callback. `nil` by default.
     - parameter error   : Error handler callback. `nil` by default.
     */
-    open func save(data parameters: Dictionary<String, AnyObject> = [:], encoding: ParameterEncoding = JSONEncoding.default, success: ((_ response: JSON) -> ())? = nil, error: ((_ response: JSON) -> ())? = nil) {
+    open func save(data parameters: Dictionary<String, String> = [:], encoding: ParameterEncoding = JSONEncoding.default, success: ((_ response: JSON) -> ())? = nil, error: ((_ response: JSON) -> ())? = nil) {
         if (self.isNew()) {
             self.request(method: "post", url: self.rootUrl, data: parameters, encoding: encoding, success: success, error: error)
         } else {
@@ -107,7 +107,7 @@ open class SwiftRestModel: NSObject
     - parameter success : Success handler callback. `nil` by default.
     - parameter error   : Error handler callback. `nil` by default.
     */
-    open func request(method:String = "get", url: String = "", data parameters: Dictionary<String, AnyObject> = [:], headers: Dictionary<String, String> = [:], encoding: ParameterEncoding = URLEncoding.default, success: ((_ response: JSON) -> ())? = nil, error: ((_ response: JSON) -> ())? = nil) {
+    open func request(method:String = "get", url: String = "", data parameters: Dictionary<String, String> = [:], headers: Dictionary<String, String> = [:], encoding: ParameterEncoding = URLEncoding.default, success: ((_ response: JSON) -> ())? = nil, error: ((_ response: JSON) -> ())? = nil) {
         
         var requestMethod: Alamofire.HTTPMethod
         

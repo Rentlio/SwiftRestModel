@@ -13,7 +13,6 @@
 		822F2AB51C5A111800FF7A42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822F2AAB1C5A111800FF7A42 /* Main.storyboard */; };
 		822F2AB91C5A111800FF7A42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F2AAE1C5A111800FF7A42 /* ViewController.swift */; };
 		822F2ABD1C5A33CF00FF7A42 /* SwiftRestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F2ABC1C5A33CF00FF7A42 /* SwiftRestModel.swift */; };
-		8255A40C1C63636200FE4867 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8255A40B1C63636200FE4867 /* Pods.framework */; };
 		8255A40E1C63636500FE4867 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8255A40D1C63636500FE4867 /* Alamofire.framework */; };
 		8255A4101C63636900FE4867 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8255A40F1C63636900FE4867 /* SwiftyJSON.framework */; };
 		8255A4121C63636D00FE4867 /* HTTPStatusCodes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8255A4111C63636D00FE4867 /* HTTPStatusCodes.framework */; };
@@ -105,7 +104,6 @@
 				8255A4121C63636D00FE4867 /* HTTPStatusCodes.framework in Frameworks */,
 				8255A4101C63636900FE4867 /* SwiftyJSON.framework in Frameworks */,
 				8255A40E1C63636500FE4867 /* Alamofire.framework in Frameworks */,
-				8255A40C1C63636200FE4867 /* Pods.framework in Frameworks */,
 				FDF315D581C9A36377ABECB6 /* Pods_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
