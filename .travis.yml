@@ -7,4 +7,4 @@ before_install:
 - gem install cocoapods --pre # Since Travis is not always on latest version
 - pod update
 script:
-- xcodebuild test -workspace SwiftRestModel.xcworkspace -scheme SwiftRestModelTests -sdk iphonesimulator10.0 -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.0'
+- xcodebuild test -workspace SwiftRestModel.xcworkspace -scheme SwiftRestModel -sdk iphonesimulator10.0 -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.0'
