@@ -4,4 +4,4 @@ xcode_workspace: SwiftRestModel.xcworkspace
 xcode_scheme: SwiftRestModel
 xcode_sdk: iphonesimulator9.3
 script:
-- xcodebuild test -workspace SwiftRestModel.xcworkspace -scheme SwiftRestModelTests -sdk iphonesimulator9.3 -destination 'platform=iOS Simulator,name=iPhone 6s,OS=9.3'
+- xcodebuild test -workspace SwiftRestModel.xcworkspace -scheme SwiftRestModel -sdk iphonesimulator9.3 -destination 'platform=iOS Simulator,name=iPhone 6s,OS=9.3'
