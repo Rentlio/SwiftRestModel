@@ -2,3 +2,6 @@ language: objective-c
 osx_image: xcode8
 xcode_workspace: SwiftRestModel.xcworkspace
 xcode_scheme: SwiftRestModel
+xcode_sdk: iphonesimulator10.0
+script:
+- xcodebuild test -workspace SwiftRestModel.xcworkspace -scheme SwiftRestModel -sdk iphonesimulator10.0 -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.0'
