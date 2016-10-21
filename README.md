@@ -87,7 +87,7 @@ model.save(data: ["foo": "bar"])
 
 Default parameters:
 - data: [:]
-- [encoding](https://github.com/Alamofire/Alamofire#parameter-encoding): .JSON
+- [encoding](https://github.com/Alamofire/Alamofire#parameter-encoding): JSONEncoding.default
 - success: nil
 - error: nil
 
