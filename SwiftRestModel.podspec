@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "SwiftRestModel"
-  s.version = "2.0.3"
+  s.version = "2.0.4"
   s.summary = "Swift helper for REST models"
   s.homepage = "https://github.com/Rentlio/SwiftRestModel"
   s.license = { :type => "MIT", :file => "LICENSE" }
