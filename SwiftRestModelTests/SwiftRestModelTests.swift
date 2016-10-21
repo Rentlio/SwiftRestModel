@@ -1,8 +1,6 @@
 import XCTest
 import SwiftyJSON
 
-@testable import SwiftRestModel
-
 class SwiftRestModelTests: XCTestCase {
     
     let model = SwiftRestModel(rootUrl: "http://jsonplaceholder.typicode.com/posts")
