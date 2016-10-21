@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "82B520801DA8DF6E003C9B8F"
-               BuildableName = "SwiftRestModel.app"
-               BlueprintName = "SwiftRestModel"
-               ReferencedContainer = "container:SwiftRestModel.xcodeproj">
+               BlueprintIdentifier = "79C040AFDDCE1BCBF6D8B5EB0B85887F"
+               BuildableName = "Alamofire.framework"
+               BlueprintName = "Alamofire"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,9 +28,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8B78EBEF5BECF9A5E855FAFF98048EF0"
-               BuildableName = "Pods_SwiftRestModelTests.framework"
-               BlueprintName = "Pods-SwiftRestModelTests"
+               BlueprintIdentifier = "8AF80654BBD8DF4ED7EAD7768D6D2088"
+               BuildableName = "HTTPStatusCodes.framework"
+               BlueprintName = "HTTPStatusCodes"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C7F6E886CF4D264939FC389DC951A140"
+               BuildableName = "SwiftyJSON.framework"
+               BlueprintName = "SwiftyJSON"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,6 +59,20 @@
                BlueprintIdentifier = "D67DA2A6EACC60116A34E53ADD139276"
                BuildableName = "Pods_SwiftRestModel.framework"
                BlueprintName = "Pods-SwiftRestModel"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8B78EBEF5BECF9A5E855FAFF98048EF0"
+               BuildableName = "Pods_SwiftRestModelTests.framework"
+               BlueprintName = "Pods-SwiftRestModelTests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -70,10 +98,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "82B520801DA8DF6E003C9B8F"
-            BuildableName = "SwiftRestModel.app"
-            BlueprintName = "SwiftRestModel"
-            ReferencedContainer = "container:SwiftRestModel.xcodeproj">
+            BlueprintIdentifier = "D67DA2A6EACC60116A34E53ADD139276"
+            BuildableName = "Pods_SwiftRestModel.framework"
+            BlueprintName = "Pods-SwiftRestModel"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -89,23 +117,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "82B520801DA8DF6E003C9B8F"
-            BuildableName = "SwiftRestModel.app"
-            BlueprintName = "SwiftRestModel"
-            ReferencedContainer = "container:SwiftRestModel.xcodeproj">
+            BlueprintIdentifier = "D67DA2A6EACC60116A34E53ADD139276"
+            BuildableName = "Pods_SwiftRestModel.framework"
+            BlueprintName = "Pods-SwiftRestModel"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OS_ACTIVITY_MODE"
-            value = "disable"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -115,16 +135,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "82B520801DA8DF6E003C9B8F"
-            BuildableName = "SwiftRestModel.app"
-            BlueprintName = "SwiftRestModel"
-            ReferencedContainer = "container:SwiftRestModel.xcodeproj">
+            BlueprintIdentifier = "D67DA2A6EACC60116A34E53ADD139276"
+            BuildableName = "Pods_SwiftRestModel.framework"
+            BlueprintName = "Pods-SwiftRestModel"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

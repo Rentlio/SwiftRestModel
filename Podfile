@@ -1,7 +1,12 @@
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
-pod 'Alamofire', '~> 3.0'
-pod 'SwiftyJSON', '~> 2.3.2'
-pod 'HTTPStatusCodes', '~> 2.0.0'
+target 'SwiftRestModel' do
+    pod 'Alamofire'
+    pod 'SwiftyJSON'
+    pod 'HTTPStatusCodes'
+
+  target 'SwiftRestModelTests' do
+    inherit! :search_paths
+  end
+end
