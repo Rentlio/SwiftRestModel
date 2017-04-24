@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0830"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8B78EBEF5BECF9A5E855FAFF98048EF0"
+               BlueprintIdentifier = "302F573BCAC3D876B01A448FE8AC352B"
                BuildableName = "Pods_SwiftRestModelTests.framework"
                BlueprintName = "Pods-SwiftRestModelTests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D67DA2A6EACC60116A34E53ADD139276"
+               BlueprintIdentifier = "0A4FB7E4C86D06511C36200AE4B39DBA"
                BuildableName = "Pods_SwiftRestModel.framework"
                BlueprintName = "Pods-SwiftRestModel"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">

@@ -6,10 +6,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let posts = Post()
-        posts.fetch(success: {
-            response in
-            print(response)
-        })
+        posts.fetch(
+            success: {
+                res in
+                print(res)
+            }
+        )
     }
 
 }

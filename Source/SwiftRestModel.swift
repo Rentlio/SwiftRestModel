@@ -1,6 +1,5 @@
-import Alamofire
+import Just
 import SwiftyJSON
-import HTTPStatusCodes
 
 open class SwiftRestModel: NSObject
 {
@@ -41,7 +40,7 @@ open class SwiftRestModel: NSObject
     - returns: Bool
     */
     open func isNew() -> Bool {
-        if (self.data["id"].exists()) {
+        if data["id"].exists() {
             return false
         }
         
@@ -57,11 +56,11 @@ open class SwiftRestModel: NSObject
     - parameter success: Success handler callback. `nil` by default.
     - parameter error  : Error handler callback. `nil` by default.
     */
-    open func fetch(data parameters: Dictionary<String, String> = [:], success: ((_ response: JSON) -> ())? = nil, error: ((_ response: JSON) -> ())? = nil) {
-        if (self.isNew()) {
-            self.request(method: "get", url: self.rootUrl, data: parameters, success: success, error: error)
+    open func fetch(data parameters: Dictionary<String, Any> = [:], success: ((_ res: JSON) -> ())? = nil, error: ((_ res: JSON) -> ())? = nil) {
+        if isNew() {
+            req(method: .get, url: self.rootUrl, data: parameters, success: success, error: error)
         } else {
-            self.request(method: "get", url: self.rootUrl + "/" + self.data["id"].stringValue, data: parameters, success: success, error: error)
+            req(method: .get, url: self.rootUrl + "/" + self.data["id"].stringValue, data: parameters, success: success, error: error)
         }
     }
     
@@ -75,11 +74,11 @@ open class SwiftRestModel: NSObject
     - parameter success : Success handler callback. `nil` by default.
     - parameter error   : Error handler callback. `nil` by default.
     */
-    open func save(data parameters: Dictionary<String, String> = [:], encoding: ParameterEncoding = JSONEncoding.default, success: ((_ response: JSON) -> ())? = nil, error: ((_ response: JSON) -> ())? = nil) {
-        if (self.isNew()) {
-            self.request(method: "post", url: self.rootUrl, data: parameters, encoding: encoding, success: success, error: error)
+    open func save(data parameters: Dictionary<String, Any> = [:], success: ((_ res: JSON) -> ())? = nil, error: ((_ res: JSON) -> ())? = nil) {
+        if isNew() {
+            req(method: .post, url: self.rootUrl, data: parameters, success: success, error: error)
         } else {
-            self.request(method: "put", url: self.rootUrl + "/" + self.data["id"].stringValue, data: parameters, encoding: encoding, success: success, error: error)
+            req(method: .put, url: self.rootUrl + "/" + self.data["id"].stringValue, data: parameters, success: success, error: error)
         }
         
     }
@@ -90,9 +89,9 @@ open class SwiftRestModel: NSObject
     - parameter success: Success handler callback. `nil` by default.
     - parameter error  : Error handler callback. `nil` by default.
     */
-    open func destroy(success: ((_ response: JSON) -> ())? = nil, error: ((_ response: JSON) -> ())? = nil) {
-        if (!self.isNew()) {
-            self.request(method: "delete", url: self.rootUrl + "/" + self.data["id"].stringValue, success: success, error: error)
+    open func destroy(success: ((_ res: JSON) -> ())? = nil, error: ((_ res: JSON) -> ())? = nil) {
+        if !isNew() {
+            req(method: .delete, url: self.rootUrl + "/" + self.data["id"].stringValue, success: success, error: error)
         }
     }
     
@@ -107,42 +106,30 @@ open class SwiftRestModel: NSObject
     - parameter success : Success handler callback. `nil` by default.
     - parameter error   : Error handler callback. `nil` by default.
     */
-    open func request(method:String = "get", url: String = "", data parameters: Dictionary<String, String> = [:], headers: Dictionary<String, String> = [:], encoding: ParameterEncoding = URLEncoding.default, success: ((_ response: JSON) -> ())? = nil, error: ((_ response: JSON) -> ())? = nil) {
+    
+    open func req(method: HTTPMethod = .get, url: String = "", data parameters: Dictionary<String, Any> = [:], headers: Dictionary<String, String> = [:], success: ((_ res: JSON) -> ())? = nil, error: ((_ res: JSON) -> ())? = nil) {
         
-        var requestMethod: Alamofire.HTTPMethod
+        let r = Just.request(method, url: url, params: parameters, data:parameters, headers: headers)
         
-        switch method {
-        case "post":
-            requestMethod = .post
-        case "put":
-            requestMethod = .put
-        case "delete":
-            requestMethod = .delete
-        default:
-            requestMethod = .get
+        if r.ok {
+            var json = JSON(data: r.content!)
+            if let statusCode = r.statusCode {
+                json["status"] = JSON(statusCode)
+            }
+            self.data = json
+            self.parse()
+            if let success = success {
+                success(json)
+            }
+        } else {
+            var json = JSON(["error": r.error?.localizedDescription])
+            if let statusCode = r.statusCode {
+                json["status"] = JSON(statusCode)
+            }
+            if let error = error {
+                error(json)
+            }
         }
         
-        Alamofire.request(url, method: requestMethod, parameters: parameters, encoding: encoding, headers: headers)
-            .validate()
-            .responseJSON { response in
-                switch response.result {
-                case .success:
-                    let json = JSON(data: response.data!)
-                    self.data = json
-                    self.parse()
-                    if let success = success {
-                        success(json)
-                    }
-                case .failure(let responseError):
-                    var json = JSON(["error": responseError.localizedDescription])
-                    if let responseStatus = response.response?.statusCode {
-                        json["status"] = JSON(responseStatus)
-                    }
-
-                    if let error = error {
-                        error(json)
-                    }
-                }
-        }
     }
 }
