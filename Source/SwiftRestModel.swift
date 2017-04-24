@@ -28,7 +28,7 @@ open class SwiftRestModel: NSObject
     
     /**
     Parse method is called after HTTP request is successful.
-    It can be used in model subclass to manupulate self.data object.
+    It can be used in model subclass to manupulate data object.
     */
     open func parse() {
         
@@ -58,9 +58,9 @@ open class SwiftRestModel: NSObject
     */
     open func fetch(data parameters: Dictionary<String, Any> = [:], success: ((_ res: JSON) -> ())? = nil, error: ((_ res: JSON) -> ())? = nil) {
         if isNew() {
-            req(method: .get, url: self.rootUrl, data: parameters, success: success, error: error)
+            req(method: .get, url: rootUrl, data: parameters, success: success, error: error)
         } else {
-            req(method: .get, url: self.rootUrl + "/" + self.data["id"].stringValue, data: parameters, success: success, error: error)
+            req(method: .get, url: rootUrl + "/" + data["id"].stringValue, data: parameters, success: success, error: error)
         }
     }
     
@@ -76,9 +76,9 @@ open class SwiftRestModel: NSObject
     */
     open func save(data parameters: Dictionary<String, Any> = [:], success: ((_ res: JSON) -> ())? = nil, error: ((_ res: JSON) -> ())? = nil) {
         if isNew() {
-            req(method: .post, url: self.rootUrl, data: parameters, success: success, error: error)
+            req(method: .post, url: rootUrl, data: parameters, success: success, error: error)
         } else {
-            req(method: .put, url: self.rootUrl + "/" + self.data["id"].stringValue, data: parameters, success: success, error: error)
+            req(method: .put, url: rootUrl + "/" + data["id"].stringValue, data: parameters, success: success, error: error)
         }
         
     }
@@ -91,7 +91,7 @@ open class SwiftRestModel: NSObject
     */
     open func destroy(success: ((_ res: JSON) -> ())? = nil, error: ((_ res: JSON) -> ())? = nil) {
         if !isNew() {
-            req(method: .delete, url: self.rootUrl + "/" + self.data["id"].stringValue, success: success, error: error)
+            req(method: .delete, url: rootUrl + "/" + data["id"].stringValue, success: success, error: error)
         }
     }
     
@@ -116,8 +116,8 @@ open class SwiftRestModel: NSObject
             if let statusCode = r.statusCode {
                 json["status"] = JSON(statusCode)
             }
-            self.data = json
-            self.parse()
+            data = json
+            parse()
             if let success = success {
                 success(json)
             }
